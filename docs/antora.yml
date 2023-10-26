@@ -1,0 +1,5 @@
+name: quarkus-smallrye-opentracing
+title: SmallRye OpenTracing
+version: dev
+nav:
+  - modules/ROOT/nav.adoc
