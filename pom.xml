@@ -32,6 +32,7 @@
         <quarkus.version>3.5.1</quarkus.version>
         <smallrye-opentracing.version>3.0.3</smallrye-opentracing.version>
         <quarkus-jaeger.version>999-SNAPSHOT</quarkus-jaeger.version>
+        <assertj.version>3.24.2</assertj.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -77,6 +78,11 @@
                 <groupId>io.quarkiverse.jaeger</groupId>
                 <artifactId>quarkus-jaeger-deployment</artifactId>
                 <version>${quarkus-jaeger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

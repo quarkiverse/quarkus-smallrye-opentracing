@@ -18,12 +18,8 @@
             <artifactId>quarkus-arc</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.eclipse.microprofile.config</groupId>
-            <artifactId>microprofile-config-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.microprofile.opentracing</groupId>
-            <artifactId>microprofile-opentracing-api</artifactId>
+            <groupId>io.quarkiverse.jaeger</groupId>
+            <artifactId>quarkus-jaeger</artifactId>
         </dependency>
         <dependency>
             <groupId>io.smallrye</groupId>
@@ -34,15 +30,6 @@
                     <artifactId>javax.inject</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <!--
-            smallrye-opentracing depends on opentracing:jaxrs2 that defines JAXRS-API as provided.
-            So we need to add it in case we use opentracing without resteasy.
-            See https://github.com/opentracing-contrib/java-interceptors/issues/15
-        -->
-        <dependency>
-            <groupId>jakarta.ws.rs</groupId>
-            <artifactId>jakarta.ws.rs-api</artifactId>
         </dependency>
         <dependency>
             <groupId>io.smallrye</groupId>
@@ -55,12 +42,33 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>jakarta.inject</groupId>
-            <artifactId>jakarta.inject-api</artifactId>
+            <groupId>org.eclipse.microprofile.config</groupId>
+            <artifactId>microprofile-config-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.quarkiverse.jaeger</groupId>
-            <artifactId>quarkus-jaeger</artifactId>
+            <groupId>org.eclipse.microprofile.opentracing</groupId>
+            <artifactId>microprofile-opentracing-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-jsonp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+        </dependency>
+        <!--
+            smallrye-opentracing depends on opentracing:jaxrs2 that defines JAXRS-API as provided.
+            So we need to add it in case we use opentracing without resteasy.
+            See https://github.com/opentracing-contrib/java-interceptors/issues/15
+        -->
+        <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.inject</groupId>
+            <artifactId>jakarta.inject-api</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
@@ -73,12 +81,14 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-jsonp</artifactId>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-core</artifactId>
+            <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-mongo-common</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
     <build>
