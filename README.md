@@ -9,7 +9,7 @@ This extension allows Quarkus applications to utilize OpenTracing for distribute
 **[OpenTelemetry](https://quarkus.io/guides/opentelemetry) is the recommended approach to tracing and telemetry for Quarkus.**
 
 The SmallRye OpenTracing support is discontinued and this extension is not actively maintained.
-If you are interested in maintaining this extension, please reach out to us in the https://github.com/quarkiverse/quarkus-smallrye-opentracing/issues[issues].
+If you are interested in maintaining this extension, please reach out to us in the [issues](https://github.com/quarkiverse/quarkus-smallrye-opentracing/issues).
 
 ## Documentation
 
