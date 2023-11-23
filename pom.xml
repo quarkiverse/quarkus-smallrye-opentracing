@@ -32,7 +32,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.version>3.6.0</quarkus.version>
         <smallrye-opentracing.version>3.0.3</smallrye-opentracing.version>
-        <quarkus-jaeger.version>999-SNAPSHOT</quarkus-jaeger.version>
+        <quarkus-jaeger.version>1.0.0</quarkus-jaeger.version>
         <assertj.version>3.24.2</assertj.version>
     </properties>
     <dependencyManagement>
