@@ -8,7 +8,7 @@
     </parent>
     <groupId>io.quarkiverse.opentracing</groupId>
     <artifactId>quarkus-smallrye-opentracing-parent</artifactId>
-    <version>1.0.0</version>
+    <version>999-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Quarkus SmallRye OpenTracing - Parent</name>
     <modules>
@@ -21,7 +21,7 @@
         <connection>scm:git:git@github.com:quarkiverse/quarkus-smallrye-opentracing.git</connection>
         <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-smallrye-opentracing.git</developerConnection>
         <url>https://github.com/quarkiverse/quarkus-smallrye-opentracing</url>
-      <tag>1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
     <properties>
         <compiler-plugin.version>3.11.0</compiler-plugin.version>
