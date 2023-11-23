@@ -15,9 +15,8 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import com.mongodb.client.MongoClient;
 
 import io.opentracing.mock.MockSpan;
-import io.opentracing.mock.MockTracer;
-import io.opentracing.util.GlobalTracer;
 import io.opentracing.util.GlobalTracerTestUtil;
+import io.quarkus.smallrye.opentracing.deployment.TracerHolder;
 import io.quarkus.smallrye.opentracing.runtime.integration.MongoTracingCommandListener;
 import io.quarkus.test.QuarkusUnitTest;
 
@@ -34,17 +33,12 @@ public class MongoTracingCommandListenerTest extends MongoTestBase {
     @RegisterExtension
     static final QuarkusUnitTest config = new QuarkusUnitTest()
             .setArchiveProducer(
-                    () -> ShrinkWrap.create(JavaArchive.class).addClasses(MongoTestBase.class))
+                    () -> ShrinkWrap.create(JavaArchive.class).addClasses(MongoTestBase.class, TracerHolder.class))
             .withConfigurationResource("application-tracing-mongo.properties");
-
-    static MockTracer mockTracer = new MockTracer();
-    static {
-        GlobalTracer.register(mockTracer);
-    }
 
     @BeforeEach
     public void before() {
-        mockTracer.reset();
+        TracerHolder.mockTracer.reset();
     }
 
     @AfterAll
@@ -61,12 +55,12 @@ public class MongoTracingCommandListenerTest extends MongoTestBase {
 
     @Test
     void testClientInitialization() {
-        assertThat(mockTracer.finishedSpans()).isEmpty();
+        assertThat(TracerHolder.mockTracer.finishedSpans()).isEmpty();
 
         assertThat(client.listDatabaseNames().first()).isNotEmpty();
 
-        assertThat(mockTracer.finishedSpans()).hasSize(1);
-        MockSpan span = mockTracer.finishedSpans().get(0);
+        assertThat(TracerHolder.mockTracer.finishedSpans()).hasSize(1);
+        MockSpan span = TracerHolder.mockTracer.finishedSpans().get(0);
         assertThat(span.operationName()).isEqualTo("listDatabases");
     }
 
